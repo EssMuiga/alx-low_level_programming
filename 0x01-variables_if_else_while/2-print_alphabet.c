@@ -1,19 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-/* more headers goes there */
-/* Compiling alphabets */
+/**
+* main - prints the alphabet in lowercase
+* Return: 0 if successful
+*/
 int main(void)
 {
-	char ch;
-
-	srand(time(0));
-	ch = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	for (ch = 'a'; ch = 'z'; ch++)
+	char c;
+	for (c = 'a'; c = 'z'; c++)
 	{
-		putchar(ch);
-		putchar("\n")
+		putchar(c);
+		putchar('\n')
 	}
 	return (0);
 }

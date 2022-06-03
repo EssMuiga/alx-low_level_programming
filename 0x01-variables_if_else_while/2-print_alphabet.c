@@ -1,12 +1,11 @@
 #include <stdio.h>
-/* working on loe lwvwl programing */
 int main(void)
 {
-	char alphabets;
-	for (alphabets = a; alphabets <=z; alphabets ++)
+	char ch;
+	for (ch = 'a'; ch = 'z';
+			ch++)
 	{
-		putchar(alphabets);
+		putchar(ch);
 	}
-	putchar("\n");
 	return (0);
 }

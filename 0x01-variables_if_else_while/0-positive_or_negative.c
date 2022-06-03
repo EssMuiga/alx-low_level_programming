@@ -1,13 +1,17 @@
 #include <stdio.h>
-if (n > 0)
+int main(void);
 {
-	printf("is positive");
-}
-if (n = 0)
-{
-	printf("is zero");
-}
-if (n < 0)
-{
-	printf("is negative");
+	int n;
+		if (n > 0)
+		{
+			printf("%d is positive" , n);
+		}
+		if (n = 0)
+		{
+			printf("%d is zero" , n);
+		}
+		if (n < 0)
+		{
+			printf("%d is negative" , n);
+		}
 }

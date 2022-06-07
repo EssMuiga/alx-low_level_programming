@@ -1,14 +1,22 @@
 #include <stdio.h>
 void jack_bauer(void)
 {
-	int hour, minute;
-	for (minute = 0; minute <= 59; minute++)
+	int i, j;
+	i = 0;
+	while (i < 24)
 	{
-		putchar((hour / 10) + '0');
-		putchar((hour % 10) + '0');
-		putchar(':');
-		putchar((minute / 10) + '0');
-		putchar((minute % 10) + '0');
-		putchar('\n');
+		j = 0;
+		while (j < 60)
+		{
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(':');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+			putchar('\n');
+			j++;
+		}
+		i++;
 	}
 }
+		

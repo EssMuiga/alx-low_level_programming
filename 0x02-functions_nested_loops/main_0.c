@@ -11,7 +11,7 @@ void test_islower(int n)
 
 	r = _islower(n);
 	putchar(r + '0');
-	_putchar('\n');
+	putchar('\n');
 }
 /**
  * main - check the code

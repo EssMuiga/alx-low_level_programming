@@ -6,25 +6,16 @@
  */
 int main(void)
 {
+	long i, number = 612852475143;
 
-	long prime = 612852475143;
-	long prime = div;
-
-	while (div < (prime / 2))
+	for (i  = 2; i <= number; i++)
 	{
-		if ((prime % 2) == 0)
+		if (number % i == 0)
 		{
-			prime /= 2;
-			continue;
+			number = number / i;
+			i--;
 		}
-		for (div = 3; div < (prime /2); div += 2)
-		{
-			if ((prime % div) == 0)
-			{
-				prime /= div;
-			}
-		}
-		printf("%ld\n", prime);
-		return (0);
 	}
+	printf("%lu\n", i);
+	return (0);
 }

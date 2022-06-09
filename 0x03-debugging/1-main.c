@@ -12,8 +12,7 @@ int main(void)
 	printf("Infinite loop incoming : (\n");
 
 	i = 0;
-	
-	while (i < 10) /*this line of code causes theinfinite loop as i will always be less than 10*/
+	while (i < 10)
 	{
 		putchar(i);
 	}

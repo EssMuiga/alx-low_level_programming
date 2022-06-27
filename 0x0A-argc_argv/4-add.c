@@ -1,9 +1,27 @@
 #include <stdio.h>
 /**
- * num_checker - checks if the given char is a number or not
- * @a: the char
- * Return: 1 if number, else 0
+ * main - the main function
+ * atoi - function that converts a string to an integer
+ * @argc: the arguments
+ * @argv: the array pointing to the arguments
+ * Return: 0
  */
-int num_checker(char *a)
+int main(int argc, char **argv)
 {
+	int i, res = 1;
 
+	if (argc != 3)
+	{
+		printf("%s\n", "Error");
+		return (1);
+	}
+	else
+	{
+		for (i = 1; i < argc; i++)
+		{
+			res *= atoi(argv[i]);
+		}
+		printf("%d\n", res);
+	}
+	return (0);
+}

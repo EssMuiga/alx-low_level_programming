@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - multiply two numbers
+ * atoi - multiply two numbers
  * @argc: arguement count
  * @argv: array of pointers to arguement strings
  * Return: result of multiplication or 1

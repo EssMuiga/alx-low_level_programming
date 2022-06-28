@@ -1,42 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * str_concat - Function that gets the end of an input
- * @s1: the input
- * @s2: the second input
- * Return: the concat of s1 and s2
+ * *str_concat - concatenates two strings
+ * @s1: string to concatenate
+ * @s2: other string to concatenate
+ * Return: pointer to the new string created (Success), or NULL (Error)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int end1, end2, i = 0;
-	char *array;
+	char *s3;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	if (s1 == NULL || s2 == NULL)
+	while (s1 && s1[len1])
 	{
-		s1 = s2 = "";
+		len1++;
 	}
-	for (end1 = 0; end1 <= *s1; end1++)
+	while (s2 && s2[len2])
 	{
+		len2++;
 	}
-	for (end2 = 0; end2 <= *s2; end2++)
-	{
-	}
-	array = malloc(sizeof(char) * (end1 + end2 + 1));
-	if (array == NULL)
+	s3 = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (s3 == NULL)
 	{
 		return (NULL);
 	}
-	while (s1)
+	i = 0;
+	j = 0;
+
+	if (s1)
 	{
-		array[i] = *s1;
-		i++;
-		s1++;
+		while (i < len1)
+		{
+			s3[i] = s1[i];
+			i++;
+		}
 	}
-	while (*s2)
+	if (s2)
 	{
-		array[i] = *s2;
-		i++;
-		s2++;
+		while (i < (len1 + len2))
+		{
+			s3[i] = s2[j];
+			i++;
+			j++;
+		}
 	}
-	return (array);
+	s3[i] = '\0';
+	return (s3);
 }

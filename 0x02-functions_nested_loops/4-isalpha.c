@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
- * main - check code
- *
+ * _isalpha - Function checking if integer is an alphabet
  * Return: 0
  */
 int _isalpha(int c)

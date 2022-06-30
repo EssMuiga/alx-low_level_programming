@@ -1,27 +1,41 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * array_range - get len, malloc * len
- * loop size of len to insert min++ into new arr
- * @min: min input
- * @max: max input
- * Return: pointer to new arr of ints
+ * *_realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previsouly allocated by malloc
+ * @old_size: size of the allocated memory for ptr
+ * @new_size: new size of the new memory block
+ * Return: pointer to the newly allocated memory block
  */
-int *array_range(int min, int max)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int *arr;
-	int i, len;
+	char *ptr1;
+	char *old_ptr;
+	unsigned int i;
 
-	if (min > max)
-		return (NULL);
-	for (len = 0; len < (max - min); len++)
-		;
-	arr = malloc(sizeof(int) * (len + 1));
-	if (arr == NULL)
-		return (NULL);
-	for (i = 0; i <= len; i++)
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr)
 	{
-		arr[i] = min++;
+		free(ptr);
+		return (NULL);
 	}
-	return (arr);
+	if (!ptr)
+		return (malloc(new_size));
+	ptr1 = malloc(new_size);
+	if (!ptr1)
+		return (NULL);
+	old_ptr = ptr;
+	if (new_size < old_size)
+	{
+		for (i = 0; i < new_size; i++)
+			ptr1[i] = old_ptr[i];
+	}
+	if (new_size > old_size)
+	{
+		for (i = 0; i < old_size; i++)
+			ptr1[i] = old_ptr[i];
+	}
+	free(ptr);
+	return (ptr1);
 }

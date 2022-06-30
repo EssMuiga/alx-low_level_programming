@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * _calloc - print 0s into 2D grid
- * @nmemb: array num
+ * @nmemb: array number
  * @size: size of ea array element
  * Return: 0
  */
